@@ -7,6 +7,6 @@ public:
             mask = (mask << 1) | 1;
             temp >>=1;
         }
-        return mask-num;
+        return mask ^ num;
     }
 };
