@@ -1,15 +1,15 @@
 class Solution {
 public:
     bool isAnagram(string s, string t) {
-        unordered_map<char , int> m;
+        int arr[26] = {0};
         for(char c : s){
-            m[c]++;
+            arr[c - 'a']++;
         }
         for(char x : t){
-            m[x]--;
+            arr[x - 'a']--;
         }
-        for(auto & i : m){
-            if(i.second != 0){
+        for(int i : arr){
+            if(i != 0){
                 return false;
             }
         }
